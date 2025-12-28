@@ -4,7 +4,7 @@ valeur2 = input("Veuillez entrer la deuxième valeur")
 
 if valeur1 == valeur2:
         print("Valeur1 est égal à valeur2")
-else valeur1 != valeur2:
+else:
         print("Les deux valeurs ne sont pas égales")
 
 
@@ -13,9 +13,9 @@ else valeur1 != valeur2:
 age = int(input("Veuillez entrer votre age"))
 
 if age >= 18:
-        print(Tu peux voter)
-else age <18:
-        print(Tu ne peux pas voter)
+        print("Tu peux voter")
+else:
+        print("Tu ne peux pas voter")
 
 
 ## job 3
@@ -56,13 +56,15 @@ for num in range(2, 1001):
 
 nombre = int(input("Veuillez entrer un nombre : "))
 if nombre % 2 == 0:
-    print("Le nombre {nombre} est pair")
+    print(f"Le nombre {nombre} est pair")
 else:
-    print("Le nombre {nombre} est impair")
+    print(f"Le nombre {nombre} est impair")
 
     
 ## job 7
 
+chaine = input("Veuillez entrer une chaîne de caractères : ")
+index = 0
 for i in range(1, 21):  # 20 lignes pour la pyramide
     if index + i <= len(chaine):
         print(chaine[index:index + i])
@@ -86,4 +88,16 @@ def type_de_triangle(a, b, c):
             return "rectangle isocèle"
         return "isocèle"
     elif a**2 + b**2 == c**2 or b**2 + c**2 == a**2 or a**2 + c**2 == b**2:
-        return 
+        return "rectangle"
+    else:
+        return "scalène"
+
+# Programme principal
+a = float(input("Entrez le côté a : "))
+b = float(input("Entrez le côté b : "))
+c = float(input("Entrez le côté c : "))
+
+if est_constructible(a, b, c):
+    print(f"Triangle {type_de_triangle(a, b, c)}")
+else:
+    print("Triangle non constructible")
